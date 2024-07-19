@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* .whatsapp{
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    right: 40px;
+    bottom: 35px;
+} */
+
+.parent{
+    width: 500px;
+    height: 500px;
+    background-color: red;
+    position: relative; 
+}
+
+.child{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    left: 10px;
+    background-color: yellow;
+    transition: all .7s;
+}
+.parent:hover .child{
+    left: 100px;
+}
+
+
+.cards{
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+gap: 20px;
+}
+
+.card{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    box-shadow: 0px 5px 5px #0000002a;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 99;
+}
+
+.card:nth-child(even)::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    top: 0;
+    background-color: blue;
+    z-index: -1;
+    transition: all .7s;
+}
+.card:nth-child(odd)::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    top: 0;
+    background-color: orange;
+    z-index: -1;
+    transition: all .7s;
+}
+
+.card:hover::after{
+    height: 100%;
+}
